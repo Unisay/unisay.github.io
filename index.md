@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: base
 title: "Lazaryev Yuriy λ Curriculum Vitae"
 ---
 
@@ -37,7 +37,7 @@ The Cardano Foundation is an independent, Swiss-based not-for-profit
 organization tasked with advancing the public digital infrastructure of the
 Cardano Blockchain. I continued working as a Cardano Wallet code contributor,
 along with the other open-source projects within the ecosystem.  
-**Haskell** | **Nix** | **Cardano Blockchain**
+**Haskell, Nix, Cardano Blockchain**
 
 ### Senior Software Engineer @ [Input-Output Global](https://iog.io/) (02/2022 - 06/2023)
 
@@ -45,7 +45,7 @@ Input-Output Global (IOG) is a company behind the Cardano Blockchain project. I
 worked here as a full-time code contributor, maintaining the open-source project
 [Cardano Wallet](https://github.com/cardano-foundation/cardano-wallet) (the
 primary full-node wallet of the Cardano blockchain network).  
-**Haskell** | **Nix** | **Cardano Blockchain**
+**Haskell, Nix, Cardano Blockchain**
 
 ### Lead Software Engineer @ [Bellroy.com](https://bellroy.com/) (08/2019 – 01/2022)
 
@@ -78,7 +78,7 @@ of the decisions I made and achievements I accomplished in this role:
   to gracefully and gradually transition from a monolithic to a distributed
   system architecture.  
 
-**Haskell** \| **Elm** | **Nix** | **DynamoDB** | **AWS Lambda** | **Serverless** | **Ruby** ‌
+**Haskell, Elm, Nix, DynamoDB, AWS Lambda, Serverless, Ruby** ‌
 
 ### Senior Software Engineer, Team Lead @ [CollegeVine.com](https://www.collegevine.com/) (11/2018 – 07/2019)
 
@@ -86,8 +86,7 @@ As a software engineer at CollegeVine, I developed back-end and front-end
 software, led a small team, and collaborated with product and UX specialists to
 manage requirements, tasks, and demos. My latest achievement was developing a UI
 test automation framework that significantly reduced manual UI testing time.  
-**Haskell** | **Purescript** | **React** | **PostgreSQL** | **AWS** | **Python**
-| **Terraform** ‌
+**Haskell, Purescript, React, PostgreSQL, AWS, Python, Terraform** ‌
 
 ### Lead Software Engineer @ [DSTOQ.com](https://dstoq.com/) (04/2018 – 11/2018)
 
@@ -96,8 +95,7 @@ vision for the platform. I designed the tech architecture and security
 foundation, coordinated external contractors, conducted tech interviews, and
 developed mission-critical components in Haskell with extensive property-based
 tests. I also contributed the Haskell Stellar SDK to open source.  
-**Haskell** | **Purescript** | **Halogen** | **Postgres** | **AWS** |
-**Kubernetes** | **Stellar Blockchain** | **Terraform** ‌
+**Haskell, Purescript, Halogen, Postgres, AWS, Kubernetes, Stellar Blockchain, Terraform** ‌
 
 ### Senior Software Engineer @ [Zalando.de](https://www.zalando.de/) (06/2015 – 03/2018)
 
@@ -108,9 +106,7 @@ participated in hiring and interviewing new talent. My most recent
 accomplishment was the integration of miadidas.com into the Zalando shop, where
 I single-handedly developed both the frontend and backend in collaboration with
 Adidas colleagues.  
-**Haskell** | **Purescript** | **PostgreSQL** | **AWS** | **Kubernetes** |
-**Microservices** | **REST API** | **Scala** | **Scala.js** | **Akka** |
-**Cats**
+**Haskell, Purescript, PostgreSQL, AWS, Kubernetes, Microservices, REST API, Scala, Scala.js, Akka, Cats**
 
 ### Senior Software Engineer @ [Groupon.com](https://www.groupon.com/) (02/2013 – 06/2015)
 
@@ -119,8 +115,7 @@ software that applies machine learning algorithms to big data in two ways: batch
 processing and real-time search relevance. We implemented a lambda architecture
 for big data. My latest achievement is developing a reactive distributed data
 indexer.  
-**Java** | **Dropwizard** | **Hadoop** | **Elasticsearch** | **Microservices** |
-**REST API** | **RxJava**
+**Java, Spring, Dropwizard, Hadoop, Elasticsearch, Microservices, REST API, RxJava**
 
 ### Lead Software Engineer @ [Rule Financial](http://www.rulefinancial.com/) (03/2012 – 08/2012)
 
@@ -128,7 +123,7 @@ Rule Financial is a fintech consultancy company where I led a team to develop
 the Prime Transaction Manager product for Barclays Capital Bank. In addition to
 project management, my main achievement was refactoring a large legacy (10+
 years) codebase and improving deployment procedures.  
-**Java** | **WebLogic** | **Struts** | **JMS** | **Scrum**
+**Java, WebLogic, Struts, JMS, Scrum**
 
 
 > To keep this CV brief, I have omitted descriptions of my previous ~7 jobs. I
