@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+        integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <style>
+        body {
+            background: rgb(204, 204, 204);
+        }
+
+        page {
+            background: white;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 0.5cm;
+            padding: .1em 1em;
+
+            font-size: 12pt;
+            font-family: Garamond, "Times New Roman", serif;
+            box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.2);
+        }
+
+        page[size="A4"] {
+            width: 21cm;
+        }
+
+        h4 {
+            margin: 0.5em 0 0 0;
+        }
+
+        .accordion>input[type="checkbox"] {
+            position: absolute;
+            left: -100vw;
+        }
+
+        .accordion .content {
+            overflow-y: hidden;
+            height: 0;
+            transition: height 0.3s ease;
+        }
+
+        .accordion>input[type="checkbox"]:checked~.content {
+            height: auto;
+            overflow: visible;
+        }
+
+        .accordion label {
+            display: block;
+            margin: .5em 0 .15em 0;
+        }
+
+        .accordion>input[type="checkbox"]:checked~.content {
+            padding: .125em 0;
+            border-top: 0;
+        }
+
+        .accordion .handle {
+            margin: 0;
+            font-size: 1.125em;
+            line-height: 1.2em;
+        }
+
+        .accordion label {
+            cursor: pointer;
+        }
+
+        .accordion .handle label:after {
+            content: "\2795";
+            display: inline-block;
+            font-size: .58em;
+            line-height: 1.556em;
+            vertical-align: middle;
+        }
+
+        .accordion>input[type="checkbox"]:checked~.handle label:after {
+            content: "\2796";
+        }
+
+        @media print {
+
+            body,
+            page {
+                background: white;
+                margin: 0;
+                box-shadow: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <page size="A4">
+        <h1>Lazaryev Yuriy</h1>
+
+        <h2>Senior Software Engineer</h2>
+
+        <h3>Contact info</h3>
+
+        <table>
+            <tr>
+                <td>Location:</td>
+                <td>Berlin, Germany</td>
+            </tr>
+            <tr>
+                <td>E-mail:</td>
+                <td>
+                    <a href="mailto:Yuriy.Lazarev@gmail.com">Yuriy.Lazarev@gmail.com</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Github:</td>
+                <td><a href="https://github.com/Unisay">Unisay</a></td>
+            </tr>
+            <tr>
+                <td>LinkedIn:</td>
+                <td>
+                    <a href="http://www.linkedin.com/in/lazaryevyuriy">lazaryevyuriy</a>
+                </td>
+            </tr>
+        </table>
+
+        <h2>Summary</h2>
+
+        <p>
+            Software developer with over 20 years of experience designing,
+            developing, and delivering software solutions in a variety of domains,
+            including web, NLP, big data with machine learning, e-commerce,
+            edu-tech, and blockchain.
+        </p>
+
+        <p>
+            Throughout my career, I have implemented problem solutions using a wide
+            range of technologies and software stacks, such as
+            Linux/Apache/MySQL/PHP, J2EE application servers, microservice-based
+            architectures, cloud functions, NoSQL databases, blockchains, and dApps.
+        </p>
+
+        <p>
+            While I am proficient in OOP/OOD and the imperative paradigm, my current
+            interest lies in strongly-typed functional programming, specifically
+            Haskell, PureScript, and Scala.
+        </p>
+
+        <h2>Objective</h2>
+
+        <p>I'd consider a job where I could make a positive impact by:</p>
+
+        <ul>
+            <li>Analyzing the problem domain from the outside in.</li>
+            <li>Participating in architectural and procedural decisions.</li>
+            <li>
+                Collaborating with colleagues and communicating with stakeholders.
+            </li>
+            <li>
+                Applying my pure functional programming skills (Haskell, PureScript).
+            </li>
+            <li>Teaching and mentoring.</li>
+        </ul>
+
+        <h2>Work experience</h2>
+
+        <h3>
+            Senior Software Engineer @
+            <a href="https://cardano-foundation.org/">Cardano Foundation</a>
+            (06/2023 &ndash; now)
+        </h3>
+
+        <p>
+            The Cardano Foundation is an independent, Swiss-based not-for-profit
+            organization tasked with advancing the public digital infrastructure of
+            the Cardano Blockchain. I continued working as a Cardano Wallet code
+            contributor, along with the other open-source projects within the
+            ecosystem.<br />
+            <strong>Haskell, Nix, Cardano Blockchain</strong>
+        </p>
+
+        <h3>
+            Senior Software Engineer @
+            <a href="https://iog.io/">Input-Output Global</a> (02/2022 &ndash;
+            06/2023)
+        </h3>
+
+        <p>
+            Input-Output Global (IOG) is a company behind the Cardano Blockchain
+            project. I worked here as a full-time code contributor, maintaining the
+            open-source project
+            <a href="https://github.com/cardano-foundation/cardano-wallet">Cardano Wallet</a>
+            (the primary full-node wallet of the Cardano blockchain network).<br />
+            <strong>Haskell, Nix, Cardano Blockchain</strong>
+        </p>
+
+        <h3 id="lead-software-engineer--bellroycom-082019--012022">
+            Lead Software Engineer @
+            <a href="https://bellroy.com/">Bellroy.com</a> (08/2019 &ndash; 01/2022)
+        </h3>
+
+        <p>
+            Bellroy is an e-commerce company with its own tech platform, originally
+            built in Ruby on Rails and hosted on AWS EC2 servers. As the company
+            grew, the Rails way was no longer sufficient to manage the complexity of
+            the systems. After success with the purely functional frontend language
+            Elm, the tech leadership decided to pivot to using Haskell as the
+            principal technology stack.
+        </p>
+
+        <p>
+            I joined Bellroy as a lead software engineer to kick off a Haskell
+            development team, establish best practices, and build software
+            infrastructure. Here are some of the decisions I made and achievements I
+            accomplished in this role:
+        </p>
+
+        <ul>
+            <li>
+                <p>
+                    I bet on serverless infrastructure: The first service I developed
+                    used AWS Lambda and was integrated with the legacy systems. Since
+                    then, the number of serverless services has grown from 0 to 6, where
+                    each service consists of a number of Lambda functions. So far, these
+                    new systems have been faster, more stable, and more maintainable.
+                </p>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <p>
+                    I organized a 5-day on-site FP course to my colleagues and have
+                    supported their learning process ever since. Two more colleagues
+                    have since joined full-time Haskell development (and growing).
+                </p>
+            </li>
+            <li>
+                <p>
+                    As a team, we developed a compiler framework for strongly-typed,
+                    composable e-commerce domain-specific language compilers. Currently,
+                    there are four DSLs used within the company to manage aspects of
+                    shipping logistics and product promotions.
+                </p>
+            </li>
+            <li>
+                <p>
+                    The Bellroy platform was growing horizontally, and I advised on best
+                    practices to gracefully and gradually transition from a monolithic
+                    to a distributed system architecture.
+                </p>
+            </li>
+        </ul>
+        <p>
+            <strong>Haskell, Elm, Nix, DynamoDB, AWS Lambda, Serverless, Ruby</strong>
+        </p>
+
+        <h3>
+            Senior Software Engineer, Team Lead @
+            <a href="https://www.collegevine.com/">CollegeVine.com</a> (11/2018
+            &ndash; 07/2019)
+        </h3>
+
+        <p>
+            As a software engineer at CollegeVine, I developed back-end and
+            front-end software, led a small team, and collaborated with product and
+            UX specialists to manage requirements, tasks, and demos. My latest
+            achievement was developing a UI test automation framework that
+            significantly reduced manual UI testing time.<br />
+            <strong>Haskell, Purescript, React, PostgreSQL, AWS, Python,
+                Terraform</strong>
+        </p>
+
+        <h3>
+            Lead Software Engineer @
+            <a href="https://dstoq.com/">DSTOQ.com</a> (04/2018 &ndash; 11/2018)
+        </h3>
+
+        <p>
+            At DSTOQ, I was one of the first engineers hired and helped shape the
+            tech vision for the platform. I designed the tech architecture and
+            security foundation, coordinated external contractors, conducted tech
+            interviews, and developed mission-critical components in Haskell with
+            extensive property-based tests. I also contributed the Haskell Stellar
+            SDK to open source.<br />
+            <strong>Haskell, Purescript, Halogen, Postgres, AWS, Kubernetes, Stellar
+                Blockchain, Terraform</strong>
+        </p>
+
+        <h3>
+            Senior Software Engineer @
+            <a href="https://www.zalando.de/">Zalando.de</a> (06/2015 &ndash;
+            03/2018)
+        </h3>
+
+        <p>
+            As a software engineer at Zalando, Europe’s largest online fashion
+            retailer, I played a key role in developing a platform solution for
+            merchants and partners. I was actively involved in technical
+            architecture decision-making processes and participated in hiring and
+            interviewing new talent. My most recent accomplishment was the
+            integration of miadidas.com into the Zalando shop, where I
+            single-handedly developed both the frontend and backend in collaboration
+            with Adidas colleagues.<br />
+            <strong>Haskell, Purescript, PostgreSQL, AWS, Kubernetes, Microservices, REST
+                API, Scala, Scala.js, Akka, Cats</strong>
+        </p>
+
+        <h3>
+            Senior Software Engineer @
+            <a href="https://www.groupon.com/">Groupon.com</a> (02/2013 &ndash;
+            06/2015)
+        </h3>
+
+        <p>
+            Groupon is the largest local-deal aggregator in the world, where I
+            developed software that applies machine learning algorithms to big data
+            in two ways: batch processing and real-time search relevance. We
+            implemented a lambda architecture for big data. My latest achievement is
+            developing a reactive distributed data indexer.<br />
+            <strong>Java, Spring, Dropwizard, Hadoop, Elasticsearch, Microservices, REST
+                API, RxJava</strong>
+        </p>
+
+        <h3>
+            Lead Software Engineer @
+            <a href="http://www.rulefinancial.com/">Rule Financial</a> (03/2012
+            &ndash; 08/2012)
+        </h3>
+
+        <p>
+            Rule Financial is a fintech consultancy company where I led a team to
+            develop the Prime Transaction Manager product for Barclays Capital Bank.
+            In addition to project management, my main achievement was refactoring a
+            large legacy (10+ years) codebase and improving deployment
+            procedures.
+            <strong>Java, WebLogic, Struts, JMS, Scrum</strong>
+        </p>
+
+        <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle-zoral">
+            <h3 class="handle">
+                <label for="handle-zoral">
+                    Senior Java Developer, Zoral Labs, (06/2007 &ndash; 03/2012)
+                </label>
+            </h3>
+            <div class="content">
+
+                At Zoral Labs I had a chance to work on a variety of projects for different clients. Here are some of
+                them:
+
+                <h4>Numara Software (now acquired by BMC software)</h4>
+
+                <p> I performed the role of senior Java developer in the project named “Footprints” which is a ITIL®
+                    V3-compatible solution for consolidating and automating business processes within and beyond the IT
+                    organization.
+                </p>
+                <p>
+                    Had daily meetings and design sessions with teams that were situated in Colombia and USA (Florida).
+                    Had business trip to USA where participated in different dev kick-off and design sessions.
+                    Worked in the team that was responsible for development of the prototype at the prototyping phase
+                    and
+                    development of the business and application frameworks.
+                </p>
+                <p>
+                    Lately has been promoted to Application Framework Feature Lead.
+                    Gained new experience with ExtJS (Sencha) and Microsoft Team Foundation Server.
+                </p>
+
+                <h4>Client: GreenLink Networks</h4>
+
+                <p>
+                    I took part in the development of the “Advanced Loyalty Program” multi-portal web application that
+                    provides media broadcasting corporations with the loyalty program tool: while the audience has an
+                    attractive point-n-click portal there are sophisticated management and reporting tools on the
+                    administrative
+                    and program partner portals.</p>
+                <p>
+                    Used tools and framework like JBoss AS, JBoss Cache, JMS, EJB, Spring Framework, Oracle DB, Apache
+                    OfBiz,
+                    Hibernate, Web services. Used various agile practices on a daily basis.
+                </p>
+
+                <h4>Internal research project</h4>
+
+                <p>
+                    Semantic Similarity component has been developed by me as a research project in order to determine
+                    how
+                    effectively semantic networks like WordNET and Wikipedia could be used to calculate a semantic
+                    similarity
+                    between words using different graph traversal algorithms.</p>
+                <p>Was solely responsible for the development.</p>
+                <p>
+                    The main challenge was to make program work fast on a big amounts of data without excessive memory
+                    usage. I
+                    achieved this with preprocessing and storing intermediate results in a binary cache.
+                    I worked in tight cooperation with a language scientist from Ukrainian university.
+                </p>
+
+                <h4>Returnil</h4>
+                <p>
+                    Returnil Virtualization System is a combination of antivirus, antimalware and a virtualization
+                    system with
+                    centralized management console to protect computers from all types of viruses and unwanted system
+                    changes.
+                    I was responsible for development of the administration backend web application for system
+                    administrators
+                    and clients as well as licensing service that was exposed to the desktop client applications.
+                    JBoss Seam Framework on top of the JBoss AS has been successfully used and worked in production
+                    under a
+                    heavy load (1 million of clients in the database).
+                </p>
+                <p>
+                    JMS and EJB technologies have been used to achieve a horizontal scalability and high availability.
+                    I have developed the licensing module to allow different licensing strategies yet being durable and
+                    secure.
+                </p>
+
+                <h4>Fizzback</h4>
+
+                <p>
+                    Real-Time Customer Feedback and Customer Experience Management System built on top of the Business
+                    Process
+                    Management framework named JBPM.
+                    I was involved in a design, development and delivery of the software solution.
+                    By the end of the active development phase I had a business trip to the Fizzback company in London
+                    and did a
+                    technical trainings to teach Fizzback personnel how to deploy new business processes and how to
+                    support the
+                    system.
+                </p>
+
+                <h4>FriendsAbroad — Social Network for language learners</h4>
+
+                <p>
+                    Our team developed a clustered and load-balanced solution to serve Internet social network with a
+                    VoIP
+                    functionality based on Skype.
+                    I developed an original Java Applet that was using native Windows Skype API and was exposing it to a
+                    JavaScript
+                    in the user browser so that it was possible to make calls and chats from the web page UI using Skype
+                    as a
+                    transport.
+                    At the server-side a hardware load balancer and several machines with JBoss AS have been used to
+                    serve lots
+                    of clients smoothly.
+                </p>
+
+                <h4>Zubka</h4>
+
+                <p>
+                    UK based Zubka is a job referral site where one can actually earn cash by recommending his mates for
+                    jobs. I
+                    have joined this project as a Lead PHP developer.
+                    At the time I joined there was a lot of legacy and buggy code written in PHP version 4.
+                    I have adopted/rewritten all the legacy code so it became compatible with a PHP version 5 and
+                    together with
+                    deployment of a bytecode optimizer it greatly accelerated the site.
+                </p>
+            </div>
+        </section>
+
+        <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle-inform-mobil">
+            <h3 class="handle">
+                <label for="handle-inform-mobil">
+                    Senior Software Developer, Inform-mobil, (08/2005 &ndash; 06/2007)
+                </label>
+            </h3>
+            <div class="content">
+                <p>My responsibilities were the following:</p>
+                <ul>
+                    <li>Taking part in technical consultations with mobile operators such as MTS, KyivStar and Beeline.
+                    </li>
+                    <li>Developing and managing Internet, WAP, SMS, STK, IVR services that work under the high load.
+                    </li>
+                    <li>Team leadership.</li>
+                </ul>
+
+                <p> One of my most successful projects was a software/hardware solution to integrate the Ukrainian
+                    national
+                    lottery with the mobile portal of Life operator, so that users could buy and print lottery tickets
+                    directly
+                    from their cell phones.
+                </p>
+                <p>
+                    Another challenging project was developing a WAP search server for MTS. I participated in the
+                    development of
+                    the search engine algorithm to calculate relevance, and I also developed an indexer with morphology
+                    support
+                    and a crawler for WAP internet resources.
+                </p>
+            </div>
+        </section>
+
+        <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle-gi">
+            <h3 class="handle">
+                <label for="handle-gi">
+                    Web Developer, IT agency “Green Island”, (12/2003 &ndash; 08/2005)
+                </label>
+            </h3>
+            <div class="content">
+                <p>The company provided integrated PR solutions, including the development, support, and promotion of
+                    managed
+                    websites. While working there, I developed a CMS system that was used to build about 50 customer
+                    websites.
+                    Some of these websites are still used successfully by their customers today.</p>
+
+                <p>Although most of the websites had a typical set of features, some required more:</p>
+
+                <ul>
+                    <li>Financial Company "Intrust" (Reporting interface for the Automatic Trading System)</li>
+                    <li>Insurance company "Rosno" (Algorithm for calculating the payments on the loan)</li>
+                    <li>Hydrometeorological Centre of Russia.</li>
+                    <li>Federal Science Educational Oversee Service</li>
+                    <li>Several banks and development companies.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle-lianet">
+            <h3 class="handle">
+                <label for="handle-lianet">
+                    Software Developer, Moscow Local Internet Provider “Lianet”, (10/2003 &ndash; 11/2003)
+                </label>
+            </h3>
+            <div class="content">
+                <p>
+                    Within two months of starting at this company, I independently developed a customer support and
+                    order processing system using Perl on FreeBSD.
+                </p>
+            </div>
+        </section>
+
+        <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle-assoc">
+            <h3 class="handle">
+                <label for="handle-assoc">
+                    Web Developer, Company “Association Ltd.”, (12/2002 &ndash; 10/2003)
+                </label>
+            </h3>
+            <div class="content">
+                <p>As a main part of his responsibilities I did the following:</p>
+
+                <ul>
+                    <li>Development and support of the Intranet portal.</li>
+                    <li>Development and support of the Internet site with an E-Shop capability.</li>
+                    <li>Integration of the Internet-shop with the proprietary company's ERP system.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle-ukraine">
+            <h3 class="handle">
+                <label for="handle-ukraine">
+                    System Administrator, University "Ukraine", (07/2001 &ndash; 01/2003)
+                </label>
+            </h3>
+            <div class="content">
+                <p>
+                    During my studies at the University, I worked as a system administrator, responsible for the
+                    operation of computer labs and other equipment. I installed a LAN on campus, including configuring
+                    the Network Address Translation and Firewall services.
+                </p>
+                <p>
+                    I also developed a client-server program to remotely manage and control workstations (using Delphi
+                    and Object Pascal). One of my responsibilities was servicing the electronic testing system used to
+                    collect data from test blanks and transfer it to the head university office.
+                </p>
+            </div>
+        </section>
+
+        <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle-reis">
+            <h3 class="handle">
+                <label for="handle-reis">
+                    System Administrator, Regional Internet Service Provider "ReIS", (06/99 &ndash; 10/03)
+                </label>
+            </h3>
+            <div class="content">
+                <p> I was responsible for:</p>
+                <ul>
+                    <li>Support of servers and dial-up modem pool.</li>
+                    <li>Domain names registration for clients.</li>
+                    <li>Consultations and support of dial-up users.</li>
+                    <li>Gained new experience with FreeBSD, shell scripting, routing, CVS, Sendmail, Apache HTTPD,
+                        Squid,
+                        BIND, NAMED, IPFW.</li>
+                </ul>
+            </div>
+        </section>
+
+        <h3>Education</h3>
+
+        <ul>
+            <li>Bachelor of science in computer systems and networks, University "Ukraine" (2001 &ndash; 2006)</li>
+            <li>Junior specialist in computers production and servicing, Radio-technical college (1997 &ndash; 2001)
+            </li>
+            <li>Classical liceum school.</li>
+        </ul>
+
+        <h3>Certifications</h3>
+
+        <ul>
+            <li>Zend Certified Engineer (ZCE), 2007 </li>
+            <li>Sun Certified Java Programmer (SCJP), 2008</li>
+        </ul>
+
+        </p>
+    </page>
+</body>
+
+</html>
