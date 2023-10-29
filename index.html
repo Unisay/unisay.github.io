@@ -19,7 +19,15 @@
             page {
                 background: white;
                 margin: 0;
-                box-shadow: 0;
+                box-shadow: none;
+            }
+
+            page::after {
+                content: "https://functional.work";
+                display: block;
+                text-align: center;
+                color: #888;
+                margin: 1em;
             }
         }
 
