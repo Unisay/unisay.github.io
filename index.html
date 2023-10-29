@@ -5,12 +5,22 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
-        integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <style>
         body {
             background: rgb(204, 204, 204);
+        }
+
+        @media print {
+
+            body,
+            page {
+                background: white;
+                margin: 0;
+                box-shadow: 0;
+            }
         }
 
         page {
@@ -19,15 +29,19 @@
             margin: 0 auto;
             margin-bottom: 0.5cm;
             padding: .1em 1em;
+            line-height: 1.25;
 
             font-size: 12pt;
-            font-family: Garamond, "Times New Roman", serif;
+            font-family: -apple-system, BlinkMacSystemFont, "avenir next",
+                avenir, helvetica, "helvetica neue", ubuntu, roboto, noto,
+                "segoe ui", arial, sans-serif;
             box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.2);
         }
 
         page[size="A4"] {
             width: 21cm;
         }
+
 
         h4 {
             margin: 0.5em 0 0 0;
@@ -55,14 +69,11 @@
         }
 
         .accordion>input[type="checkbox"]:checked~.content {
-            padding: .125em 0;
-            border-top: 0;
+            padding: .15em 0;
         }
 
         .accordion .handle {
             margin: 0;
-            font-size: 1.125em;
-            line-height: 1.2em;
         }
 
         .accordion label {
@@ -73,22 +84,11 @@
             content: "\2795";
             display: inline-block;
             font-size: .58em;
-            line-height: 1.556em;
             vertical-align: middle;
         }
 
         .accordion>input[type="checkbox"]:checked~.handle label:after {
             content: "\2796";
-        }
-
-        @media print {
-
-            body,
-            page {
-                background: white;
-                margin: 0;
-                box-shadow: 0;
-            }
         }
     </style>
 </head>
@@ -257,8 +257,7 @@
 
         <h3>
             Senior Software Engineer, Team Lead @
-            <a href="https://www.collegevine.com/">CollegeVine.com</a> (11/2018
-            &ndash; 07/2019)
+            <a href="https://www.collegevine.com/">CollegeVine.com</a> (11/2018 &ndash; 07/2019)
         </h3>
 
         <p>
@@ -267,8 +266,7 @@
             UX specialists to manage requirements, tasks, and demos. My latest
             achievement was developing a UI test automation framework that
             significantly reduced manual UI testing time.<br />
-            <strong>Haskell, Purescript, React, PostgreSQL, AWS, Python,
-                Terraform</strong>
+            <strong>Haskell, Purescript, React, PostgreSQL, AWS, Python, Terraform</strong>
         </p>
 
         <h3>
@@ -289,8 +287,7 @@
 
         <h3>
             Senior Software Engineer @
-            <a href="https://www.zalando.de/">Zalando.de</a> (06/2015 &ndash;
-            03/2018)
+            <a href="https://www.zalando.de/">Zalando.de</a> (06/2015 &ndash; 03/2018)
         </h3>
 
         <p>
@@ -308,8 +305,7 @@
 
         <h3>
             Senior Software Engineer @
-            <a href="https://www.groupon.com/">Groupon.com</a> (02/2013 &ndash;
-            06/2015)
+            <a href="https://www.groupon.com/">Groupon.com</a> (02/2013 &ndash; 06/2015)
         </h3>
 
         <p>
@@ -324,8 +320,7 @@
 
         <h3>
             Lead Software Engineer @
-            <a href="http://www.rulefinancial.com/">Rule Financial</a> (03/2012
-            &ndash; 08/2012)
+            <a href="http://www.rulefinancial.com/">Rule Financial</a> (03/2012 &ndash; 08/2012)
         </h3>
 
         <p>
@@ -333,7 +328,7 @@
             develop the Prime Transaction Manager product for Barclays Capital Bank.
             In addition to project management, my main achievement was refactoring a
             large legacy (10+ years) codebase and improving deployment
-            procedures.
+            procedures.<br />
             <strong>Java, WebLogic, Struts, JMS, Scrum</strong>
         </p>
 
@@ -345,9 +340,10 @@
                 </label>
             </h3>
             <div class="content">
-
-                At Zoral Labs I had a chance to work on a variety of projects for different clients. Here are some of
-                them:
+                <p>
+                    At Zoral Labs I had a chance to work on a variety of projects for different clients.
+                    Here are some of them:
+                </p>
 
                 <h4>Numara Software (now acquired by BMC software)</h4>
 
@@ -359,56 +355,54 @@
                     Had daily meetings and design sessions with teams that were situated in Colombia and USA (Florida).
                     Had business trip to USA where participated in different dev kick-off and design sessions.
                     Worked in the team that was responsible for development of the prototype at the prototyping phase
-                    and
-                    development of the business and application frameworks.
+                    and development of the business and application frameworks.
                 </p>
                 <p>
                     Lately has been promoted to Application Framework Feature Lead.
                     Gained new experience with ExtJS (Sencha) and Microsoft Team Foundation Server.
                 </p>
 
-                <h4>Client: GreenLink Networks</h4>
+                <h4>GreenLink Networks</h4>
 
                 <p>
                     I took part in the development of the “Advanced Loyalty Program” multi-portal web application that
                     provides media broadcasting corporations with the loyalty program tool: while the audience has an
                     attractive point-n-click portal there are sophisticated management and reporting tools on the
-                    administrative
-                    and program partner portals.</p>
+                    administrative and program partner portals.
+                </p>
                 <p>
                     Used tools and framework like JBoss AS, JBoss Cache, JMS, EJB, Spring Framework, Oracle DB, Apache
-                    OfBiz,
-                    Hibernate, Web services. Used various agile practices on a daily basis.
+                    OfBiz, Hibernate, Web services. Used various agile practices on a daily basis.
                 </p>
 
                 <h4>Internal research project</h4>
 
                 <p>
                     Semantic Similarity component has been developed by me as a research project in order to determine
-                    how
-                    effectively semantic networks like WordNET and Wikipedia could be used to calculate a semantic
-                    similarity
-                    between words using different graph traversal algorithms.</p>
+                    how effectively semantic networks like WordNET and Wikipedia could be used to calculate a semantic
+                    similarity between words using different graph traversal algorithms.
+                </p>
                 <p>Was solely responsible for the development.</p>
                 <p>
                     The main challenge was to make program work fast on a big amounts of data without excessive memory
-                    usage. I
-                    achieved this with preprocessing and storing intermediate results in a binary cache.
+                    usage. I achieved this with preprocessing and storing intermediate results in a binary cache.
                     I worked in tight cooperation with a language scientist from Ukrainian university.
                 </p>
 
                 <h4>Returnil</h4>
                 <p>
                     Returnil Virtualization System is a combination of antivirus, antimalware and a virtualization
-                    system with
-                    centralized management console to protect computers from all types of viruses and unwanted system
-                    changes.
+                    system with centralized management console to protect computers from all types of viruses and
+                    unwanted system changes.
+                </p>
+                <p>
                     I was responsible for development of the administration backend web application for system
-                    administrators
-                    and clients as well as licensing service that was exposed to the desktop client applications.
+                    administrators and clients as well as licensing service that was exposed to the desktop client
+                    applications.
+                </p>
+                <p>
                     JBoss Seam Framework on top of the JBoss AS has been successfully used and worked in production
-                    under a
-                    heavy load (1 million of clients in the database).
+                    under a heavy load (1 million of clients in the database).
                 </p>
                 <p>
                     JMS and EJB technologies have been used to achieve a horizontal scalability and high availability.
@@ -420,14 +414,11 @@
 
                 <p>
                     Real-Time Customer Feedback and Customer Experience Management System built on top of the Business
-                    Process
-                    Management framework named JBPM.
+                    Process Management framework named JBPM.
                     I was involved in a design, development and delivery of the software solution.
                     By the end of the active development phase I had a business trip to the Fizzback company in London
-                    and did a
-                    technical trainings to teach Fizzback personnel how to deploy new business processes and how to
-                    support the
-                    system.
+                    and did a technical trainings to teach Fizzback personnel how to deploy new business processes and
+                    how to support the system.
                 </p>
 
                 <h4>FriendsAbroad — Social Network for language learners</h4>
@@ -542,7 +533,7 @@
                 </label>
             </h3>
             <div class="content">
-                <p>As a main part of his responsibilities I did the following:</p>
+                <p>I was responsible for the following:</p>
 
                 <ul>
                     <li>Development and support of the Intranet portal.</li>
