@@ -1,0 +1,499 @@
+basics:
+  name: Lazaryev Yuriy
+  label: Senior Software Engineer
+  email: Yuriy.Lazarev@gmail.com
+  location:
+    city: Berlin
+    countryCode: DE
+    region: Germany
+  profiles:
+    - network: GitHub
+      username: Unisay
+      url: https://github.com/Unisay
+    - network: LinkedIn
+      username: lazaryevyuriy
+      url: https://www.linkedin.com/in/lazaryevyuriy
+  summary: >
+    Software engineer with 25+ years of experience across e-commerce, fintech,
+    blockchain, and programming language tooling. I spend most of my time now
+    in compiler engineering — specifically the Plutus Core / Plinth compilers
+    that power smart contracts on the Cardano blockchain. I wrote my first line
+    of production code in 1999 and have been in strongly-typed functional
+    programming (Haskell, PureScript, Scala) since 2015. The common thread
+    across everything: high-stakes systems where correctness is non-negotiable,
+    a preference for building tools that outlast the project that prompted them,
+    and a genuine interest in bringing people into the FP world rather than just
+    using it myself.
+
+work:
+  - name: Intersect MBO
+    position: Senior Software Engineer — Plutus Core Team
+    url: https://www.intersectmbo.org/
+    startDate: "2024-01"
+    summary: >
+      Intersect is the member-based organization stewarding the Cardano open-source
+      ecosystem. As a compiler engineer on the Plutus Core team I work on the Plutus
+      and Plinth compilers — the foundation of Cardano's smart contract platform.
+    highlights:
+      - >
+        Designed and built the UPLC-CAPE benchmarking framework: a structured
+        harness for measuring Untyped Plutus Language Core (UPLC) program
+        performance across compiler versions. Presented at the UPLC 2025 workshop
+        (https://plutus.cardano.intersectmbo.org/uplc2025/talks/cape-workshop/).
+      - >
+        Authored and implemented CIP-0156 (multiIndexArray builtin): took the proposal
+        from initial draft through community ratification to full compiler implementation.
+        This is the standard path for extending the Cardano scripting language.
+      - >
+        Security review work on high-stakes blockchain code: auditing and hardening
+        smart contract compiler output where on-chain bugs have real financial consequences.
+      - >
+        Built an AI-assisted bug-discovery pipeline that combines static analysis with
+        LLM-driven pattern matching to surface subtle correctness issues in compiler output.
+      - >
+        Cardano Node release manager: coordinated multi-team release process for
+        cardano-node, including integration testing, changelog curation, and stakeholder
+        sign-off (https://github.com/IntersectMBO/cardano-node/issues/5868).
+      - >
+        Implemented CIP-57: a machine-readable format for documenting Plutus smart
+        contract blueprints, enabling tooling to generate type-safe client code.
+      - >
+        Implemented a Cardano blockchain indexer that continuously collects execution
+        statistics on all Plutus scripts running on mainnet, feeding a Grafana dashboard
+        used by the compiler team to make data-informed optimization decisions.
+    keywords:
+      - Haskell
+      - Nix
+      - Plutus
+      - Plinth
+      - Cardano Blockchain
+      - Compiler Engineering
+
+  - name: Cardano Foundation
+    position: Senior Software Engineer
+    url: https://cardano-foundation.org/
+    startDate: "2023-06"
+    endDate: "2023-12"
+    summary: >
+      The Cardano Foundation is an independent, Swiss-based not-for-profit
+      tasked with advancing Cardano's public digital infrastructure. Continued
+      contributing to cardano-wallet and other open-source ecosystem projects.
+    keywords:
+      - Haskell
+      - Nix
+      - Cardano Blockchain
+
+  - name: Input-Output Global
+    position: Senior Software Engineer
+    url: https://iog.io/
+    startDate: "2022-02"
+    endDate: "2023-06"
+    summary: >
+      IOG is the research and engineering company behind the Cardano blockchain.
+      Full-time contributor to the open-source cardano-wallet project — the
+      primary full-node wallet of the Cardano network.
+    highlights:
+      - >
+        Maintained and extended cardano-wallet
+        (https://github.com/cardano-foundation/cardano-wallet): a production
+        Haskell service handling wallet state, UTxO tracking, and transaction
+        construction for the entire Cardano ecosystem.
+    keywords:
+      - Haskell
+      - Nix
+      - Cardano Blockchain
+
+  - name: Bellroy
+    position: Lead Software Engineer
+    url: https://bellroy.com/
+    startDate: "2019-08"
+    endDate: "2022-01"
+    summary: >
+      Bellroy is an Australian e-commerce company that decided to pivot its
+      backend from Ruby on Rails to Haskell after early success with Elm on
+      the frontend. I joined as the founding Haskell engineer to establish
+      the stack, practices, and team.
+    highlights:
+      - >
+        Designed and built a Haskell customer-behaviour simulation that modelled
+        Bellroy's full purchase funnel. After a month of collaborative iteration
+        the model was handed to the data science team, who used it as the
+        foundation for their own analytical work — one of the cleaner examples
+        of FP as a tool for exploratory research, not just production services.
+      - >
+        Bet early on serverless: the first service I shipped used AWS Lambda and
+        DynamoDB; it is still running in production with no major incidents. That
+        durability signal convinced the team to make serverless the default
+        deployment pattern. By the time I left, the estate had grown from 0 to 6
+        serverless services, each comprising multiple Lambda functions.
+      - >
+        Led a 5-day on-site functional programming course for colleagues, then
+        provided ongoing mentorship. Three colleagues transitioned to full-time
+        Haskell development as a result.
+      - >
+        Built a compiler framework for strongly-typed, composable e-commerce
+        DSL compilers. Four DSLs emerged from this framework — covering shipping
+        logistics and product promotion rules — and are in active production use.
+      - >
+        Advised on the gradual monolith-to-distributed transition as the platform
+        scaled horizontally, ensuring the new Haskell services could integrate
+        cleanly with the existing Rails systems during the migration period.
+    keywords:
+      - Haskell
+      - Elm
+      - Nix
+      - DynamoDB
+      - AWS Lambda
+      - Serverless
+      - Ruby
+
+  - name: CollegeVine
+    position: Senior Software Engineer, Team Lead
+    url: https://www.collegevine.com/
+    startDate: "2018-11"
+    endDate: "2019-07"
+    summary: >
+      CollegeVine is an edu-tech platform helping students navigate college
+      admissions. Developed backend and frontend software, led a small team,
+      and collaborated with product and UX. Key achievement: a UI test automation
+      framework that significantly cut manual QA time.
+    keywords:
+      - Haskell
+      - PureScript
+      - React
+      - PostgreSQL
+      - AWS
+      - Python
+      - Terraform
+
+  - name: DSTOQ
+    position: Lead Software Engineer
+    url: https://dstoq.com/
+    startDate: "2018-04"
+    endDate: "2018-11"
+    summary: >
+      DSTOQ was a fintech startup bringing fractional stock ownership to
+      emerging markets, built on the Stellar blockchain. One of the first
+      engineers hired; shaped the initial tech vision, architecture, and
+      security foundation.
+    highlights:
+      - >
+        Designed the core architecture and security model for a system where
+        financial correctness is a hard requirement, not a quality goal.
+        Developed mission-critical components in Haskell with extensive
+        property-based tests (QuickCheck, Hedgehog).
+      - >
+        Wrote and open-sourced the Haskell Stellar SDK
+        (https://github.com/Unisay/stellar-sdk) — the first community SDK for
+        Stellar in Haskell, enabling integration with the XLM payment network.
+      - Conducted technical interviews and coordinated external contractors.
+    keywords:
+      - Haskell
+      - PureScript
+      - Halogen
+      - PostgreSQL
+      - AWS
+      - Kubernetes
+      - Stellar Blockchain
+      - Terraform
+
+  - name: Zalando
+    position: Senior Software Engineer
+    url: https://www.zalando.de/
+    startDate: "2015-06"
+    endDate: "2018-03"
+    summary: >
+      Zalando is Europe's largest online fashion retailer. Worked on the
+      merchant and partner platform, participated in architecture decisions,
+      and helped hire new engineers.
+    highlights:
+      - >
+        Single-handedly developed both the frontend and backend for the
+        integration of miadidas.com into the Zalando shop, working directly
+        with Adidas colleagues across two codebases simultaneously.
+      - >
+        Actively involved in technical architecture decisions and interviewing
+        as the team grew from a small FP pilot to a larger Haskell/Scala group.
+    keywords:
+      - Haskell
+      - PureScript
+      - PostgreSQL
+      - AWS
+      - Kubernetes
+      - Microservices
+      - Scala
+      - Akka
+      - Cats
+
+  - name: Groupon
+    position: Senior Software Engineer
+    url: https://www.groupon.com/
+    startDate: "2013-02"
+    endDate: "2015-06"
+    summary: >
+      Groupon was the world's largest local-deal aggregator. Developed software
+      applying machine learning to big data — both batch processing (Hadoop) and
+      real-time search relevance. Implemented a lambda architecture for big data.
+      Key achievement: a reactive distributed data indexer for real-time search.
+    keywords:
+      - Java
+      - Spring
+      - Dropwizard
+      - Hadoop
+      - Elasticsearch
+      - Microservices
+      - RxJava
+
+  - name: Rule Financial
+    position: Lead Software Engineer
+    url: http://www.rulefinancial.com/
+    startDate: "2012-03"
+    endDate: "2012-08"
+    summary: >
+      Rule Financial is a fintech consultancy. Led a team building the Prime
+      Transaction Manager product for Barclays Capital. Primary achievement:
+      refactoring a 10+ year legacy codebase and modernising the deployment
+      pipeline.
+    keywords:
+      - Java
+      - WebLogic
+      - Struts
+      - JMS
+      - Scrum
+
+  - name: Zoral Labs
+    position: Senior Java Developer
+    startDate: "2007-06"
+    endDate: "2012-03"
+    summary: >
+      Consulting shop with clients across the US and Europe. Worked on projects
+      for Numara Software (ITIL workflow platform, acquired by BMC), GreenLink
+      Networks (loyalty programme platform on JBoss/EJB), Returnil (antivirus
+      + virtualisation product serving 1M clients), and Fizzback (real-time
+      customer feedback via JBPM). Also contributed a semantic similarity NLP
+      research component in collaboration with a Ukrainian university linguist.
+    keywords:
+      - Java
+      - JBoss
+      - EJB
+      - Spring
+      - JMS
+      - ExtJS
+
+  - name: Inform-mobil
+    position: Senior Software Developer
+    startDate: "2005-08"
+    endDate: "2007-06"
+    summary: >
+      Mobile services company working with Ukrainian operators (MTS, KyivStar,
+      Beeline). Developed and managed Internet, WAP, SMS, STK, and IVR services
+      under high load. Built a WAP search engine with morphology support and a
+      crawler. Integrated the Ukrainian national lottery with a mobile operator portal.
+    keywords:
+      - PHP
+      - Java
+      - WAP
+      - SMS
+
+  - name: IT Agency "Green Island"
+    position: Web Developer
+    startDate: "2003-12"
+    endDate: "2005-08"
+    summary: >
+      Built a CMS used to deliver ~50 customer websites including clients in
+      banking, insurance, and government (Hydrometeorological Centre, Federal
+      Educational Oversight Service).
+    keywords:
+      - PHP
+      - MySQL
+
+  - name: Moscow Local Internet Provider "Lianet"
+    position: Software Developer
+    startDate: "2003-10"
+    endDate: "2003-11"
+    summary: >
+      In two months, independently developed a customer support and order
+      processing system in Perl on FreeBSD.
+    keywords:
+      - Perl
+      - FreeBSD
+
+  - name: Company "Association Ltd."
+    position: Web Developer
+    startDate: "2002-12"
+    endDate: "2003-10"
+    summary: >
+      Developed and maintained intranet portal and public-facing e-shop.
+      Integrated the web shop with the company's proprietary ERP system.
+    keywords:
+      - PHP
+
+  - name: University "Ukraine"
+    position: System Administrator
+    startDate: "2001-07"
+    endDate: "2003-01"
+    summary: >
+      Ran computer labs during my studies. Installed campus LAN with NAT and
+      firewall. Developed a remote workstation management tool in Delphi/Object
+      Pascal. Maintained the electronic testing system used for exam data
+      collection.
+    keywords:
+      - Delphi
+      - FreeBSD
+      - Networking
+
+  - name: Regional ISP "ReIS"
+    position: System Administrator
+    startDate: "1999-06"
+    endDate: "2003-10"
+    summary: >
+      Server and dial-up modem pool support. Domain registration for clients.
+      Gained foundational experience with FreeBSD, routing, Sendmail, Apache,
+      Squid, BIND, IPFW.
+    keywords:
+      - FreeBSD
+      - Shell Scripting
+
+skills:
+  - name: Functional Programming
+    level: Expert
+    keywords:
+      - Haskell
+      - PureScript
+      - Scala
+      - Elm
+      - QuickCheck
+      - Hedgehog
+
+  - name: Compiler & PL Engineering
+    level: Expert
+    keywords:
+      - Plutus Core
+      - Plinth
+      - UPLC
+      - DSL design
+      - Benchmarking
+
+  - name: Blockchain & Smart Contracts
+    level: Expert
+    keywords:
+      - Cardano
+      - Plutus
+      - Stellar
+      - CIP authorship
+
+  - name: Cloud & Infrastructure
+    level: Proficient
+    keywords:
+      - AWS Lambda
+      - DynamoDB
+      - Kubernetes
+      - EKS
+      - Serverless
+      - Nix
+      - NixOS
+      - Terraform
+
+  - name: Data & Search
+    level: Proficient
+    keywords:
+      - PostgreSQL
+      - Elasticsearch
+      - Hadoop
+      - Grafana
+
+  - name: JVM / Legacy
+    level: Proficient
+    keywords:
+      - Java
+      - Spring
+      - Akka
+      - Scala.js
+      - Cats
+
+projects:
+  - name: Haskell Stellar SDK
+    description: >
+      Open-source Haskell client library for the Stellar blockchain network.
+      First community SDK for Stellar in Haskell; used by DSTOQ in production.
+    url: https://github.com/Unisay/stellar-sdk
+    keywords:
+      - Haskell
+      - Stellar
+      - Blockchain
+
+  - name: UPLC-CAPE Benchmarking Framework
+    description: >
+      A structured benchmarking harness for Untyped Plutus Language Core (UPLC)
+      programs. Measures performance characteristics across compiler versions,
+      enabling data-driven compiler optimization decisions.
+    url: https://plutus.cardano.intersectmbo.org/uplc2025/talks/cape-workshop/
+    keywords:
+      - Haskell
+      - Plutus
+      - Benchmarking
+      - Compiler Engineering
+
+  - name: cardano-wallet contributions
+    description: >
+      Ongoing contributions to the primary full-node wallet of the Cardano
+      network. Covers UTxO management, transaction construction, and wallet
+      state tracking.
+    url: https://github.com/cardano-foundation/cardano-wallet
+    keywords:
+      - Haskell
+      - Cardano
+
+  - name: CIP-0156 (multiIndexArray)
+    description: >
+      Cardano Improvement Proposal for a new UPLC builtin. Authored, drove
+      community ratification, and implemented in the Plutus compiler.
+    url: https://github.com/cardano-foundation/CIPs/tree/master/CIP-0156
+    keywords:
+      - Cardano
+      - Compiler Engineering
+      - Standards
+
+interests:
+  - name: Pure FP as production paradigm
+    keywords:
+      - Pure functional programming is not a research curiosity — it is a
+        production discipline. Haskell and PureScript are my primary tools
+        precisely because they make a class of bugs impossible by construction,
+        not because they are fashionable.
+
+  - name: Bridging research and engineering
+    keywords:
+      - I author CIPs, build benchmarking frameworks, write simulations, and
+        wire LLMs into static analysis pipelines. The distance between "how
+        does this work" and "this is in production" should be as short as
+        possible.
+
+  - name: Teaching and durable infrastructure
+    keywords:
+      - Three colleagues learned Haskell in production teams because I taught
+        them. The serverless services I built in 2019 are still running without
+        incidents. I measure success by what survives, not what ships.
+
+education:
+  - institution: University "Ukraine"
+    area: Computer Systems and Networks
+    studyType: Bachelor of Science
+    startDate: "2001-09"
+    endDate: "2006-06"
+
+  - institution: Radio-Technical College
+    area: Computers Production and Servicing
+    studyType: Junior Specialist
+    startDate: "1997-09"
+    endDate: "2001-06"
+
+certificates:
+  - name: Zend Certified Engineer (ZCE)
+    date: "2007"
+    issuer: Zend Technologies
+
+  - name: Oracle Certified Professional, Java SE
+    date: "2008"
+    issuer: Oracle (formerly Sun Microsystems)
+    url: ""
