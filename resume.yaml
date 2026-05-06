@@ -1,7 +1,7 @@
 basics:
   name: Lazaryev Yuriy
   label: Senior Software Engineer
-  email: Yuriy.Lazarev@gmail.com
+  email: unisay@gmail.com
   location:
     city: Berlin
     countryCode: DE
@@ -48,8 +48,9 @@ work:
         Security review work on high-stakes blockchain code: auditing and hardening
         smart contract compiler output where on-chain bugs have real financial consequences.
       - >
-        Built an AI-assisted bug-discovery pipeline that combines static analysis with
-        LLM-driven pattern matching to surface subtle correctness issues in compiler output.
+        Authored the concept and co-built an AI-assisted bug-discovery pipeline: I led a
+        team of AI specialists, contributed a custom pipeline component (), and
+        integrated the result into the compiler's existing tooling.
       - >
         Cardano Node release manager: coordinated multi-team release process for
         cardano-node, including integration testing, changelog curation, and stakeholder
