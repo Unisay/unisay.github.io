@@ -55,6 +55,7 @@ a:hover { text-decoration: underline; }
         html += `<tr><td>${escape(p.network)}:</td><td><a href="${escape(p.url)}">${escape(p.username)}</a></td></tr>`;
       });
     }
+    html += `<tr><td>PDF version:</td><td><a href="./resume.pdf">Download PDF</a></td></tr>`;
     html += `</table>`;
   }
 
