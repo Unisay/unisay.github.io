@@ -42,6 +42,7 @@
                 | if ($matches | length) > 0 then .highlights = $matches[0].highlights else . end
               )
             | del(.interests)
+            | del(.references)
           ' resume.json > resume-pdf.json
           resumed export resume-pdf.json --theme "$(pwd)/theme/pdf.js" --output index-pdf.html
           INTER_TTF="${pkgs.inter}/share/fonts/truetype/InterVariable.ttf"
@@ -79,6 +80,7 @@
                 | if ($matches | length) > 0 then .highlights = $matches[0].highlights else . end
               )
             | del(.interests)
+            | del(.references)
           ' resume.json > resume-pdf.json
           resumed export resume-pdf.json --theme "$(pwd)/theme/pdf.js" --output index-pdf.html
           INTER_TTF="${pkgs.inter}/share/fonts/truetype/InterVariable.ttf"

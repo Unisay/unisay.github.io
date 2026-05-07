@@ -21,10 +21,9 @@ basics:
     working on the smart-contract language compiler for Cardano.
 
 
-    I look for teams with a well-understood mission where I can make meaningful
-    contributions — bringing functional programming strengths, first-principles
-    thinking, and a design-before-build discipline that tends to produce software
-    that is correct and secure before it is fast.
+    I bring a design-before-build discipline that produces software correct and
+    secure before it is fast — useful in domains where bugs have financial or
+    safety consequences.
 
 work:
   - name: Intersect MBO
