@@ -24,10 +24,11 @@ function render(resume) {
   const work = resume.work || [];
   const skills = resume.skills || [];
   const education = resume.education || [];
-  const references = (resume.references || []).slice(0, 3);
+  const references = resume.references || [];
 
   const recentWork = work.filter(j => yearOf(j.endDate) >= EARLIER_CUTOFF || !j.endDate);
   const earlierWork = work.filter(j => j.endDate && yearOf(j.endDate) < EARLIER_CUTOFF);
+  const hasEarlierPositions = earlierWork.length > 0;
 
   let html = `<!DOCTYPE html>
 <html lang="en">
@@ -108,26 +109,20 @@ html, body {
 
 /* ── Section headings ── */
 .section-title {
-  font-size: 9pt;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
   color: #1a1a1a;
-  margin: 10pt 0 6pt 0;
-  padding-bottom: 3pt;
-  border-bottom: 1.5pt solid #1a1a1a;
-  break-after: avoid;
+  margin: 20pt 0 14pt 0;
+  border-bottom: 1.5pt solid #505050;
 }
 
 /* ── Experience ── */
 .grid-item {
   margin-bottom: 8pt;
   padding-bottom: 8pt;
-  border-bottom: 0.5pt solid #e5e5e5;
   break-inside: avoid;
 }
 .grid-item:last-child {
-  border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -149,7 +144,7 @@ html, body {
   color: #4a4a4a;
 }
 .highlights-list {
-  margin: 2pt 0 0 0;
+  margin: 5pt 0 0 0;
   padding-left: 12pt;
   list-style: none;
 }
@@ -172,6 +167,16 @@ html, body {
   font-size: 8.5pt;
   line-height: 1.4;
   color: #4a4a4a;
+  margin-top: 5pt;
+}
+
+/* ── Experience omission note ── */
+.experience-omission {
+  font-size: 8pt;
+  color: #6a6a6a;
+  font-style: italic;
+  margin-top: 8pt;
+  padding-top: 6pt;
 }
 
 /* ── Earlier career ── */
@@ -201,26 +206,20 @@ html, body {
 }
 
 /* ── Skills ── */
-.skills-list {
-  display: flex;
-  flex-direction: column;
-  gap: 3pt;
-}
-.skill-row {
-  display: flex;
-  gap: 8pt;
+.skills-paragraphs {
   font-size: 8.5pt;
-  break-inside: avoid;
+  line-height: 1.45;
+  color: #2a2a2a;
 }
-.skill-label {
-  font-weight: 700;
-  width: 110pt;
-  flex-shrink: 0;
+.skills-paragraphs p {
+  margin: 0 0 5pt 0;
+}
+.skills-paragraphs p:last-child {
+  margin-bottom: 0;
+}
+.skills-paragraphs strong {
   color: #1a1a1a;
-}
-.skill-values {
-  color: #4a4a4a;
-  flex: 1;
+  font-weight: 600;
 }
 
 /* ── Education ── */
@@ -350,33 +349,18 @@ html, body {
     });
   }
 
-  // Experience — earlier
-  if (earlierWork.length) {
-    html += `<h2 class="section-title">Earlier Career</h2>`;
-    html += `<div class="earlier-list">`;
-    earlierWork.forEach(job => {
-      const startY = job.startDate ? job.startDate.slice(0, 4) : '';
-      const endY = job.endDate ? job.endDate.slice(0, 4) : '';
-      const era = startY === endY ? startY : `${startY}–${endY}`;
-      html += `<div class="earlier-item">`;
-      html += `<span class="earlier-date">${escape(era)}</span>`;
-      html += `<span class="earlier-content"><strong>${escape(job.name)}</strong> — ${escape(job.position || '')}</span>`;
-      html += `</div>`;
-    });
-    html += `</div>`;
+  // Earlier positions — note only
+  if (hasEarlierPositions) {
+    html += `<p class="experience-omission">Earlier positions are omitted for brevity; the complete work history is available at <a href="https://cv.functional.work" style="color:#6a6a6a">cv.functional.work</a></p>`;
   }
 
   // Skills
   if (skills.length) {
-    html += `<h2 class="section-title" style="break-before:page">Skills</h2>`;
-    html += `<div class="skills-list">`;
+    html += `<h2 class="section-title">Skills</h2>`;
+    html += `<div class="skills-paragraphs">`;
     skills.forEach(s => {
-      html += `<div class="skill-row">`;
-      html += `<span class="skill-label">${escape(s.name)}</span>`;
-      if (s.keywords && s.keywords.length) {
-        html += `<span class="skill-values">${s.keywords.map(k => escape(k)).join(', ')}</span>`;
-      }
-      html += `</div>`;
+      const keywords = s.keywords && s.keywords.length ? s.keywords.map(k => escape(k)).join(', ') : '';
+      html += `<p><strong>${escape(s.name)}</strong><br>${keywords}</p>`;
     });
     html += `</div>`;
   }
@@ -388,27 +372,25 @@ html, body {
       const startY = ed.startDate ? ed.startDate.slice(0, 4) : '';
       const endY = ed.endDate ? ed.endDate.slice(0, 4) : '';
       const era = startY === endY ? startY : `${startY}–${endY}`;
-      html += `<div class="edu-item">`;
-      html += `<span class="edu-date">${escape(era)}</span>`;
-      html += `<span class="edu-content">${escape(ed.studyType || '')}, ${escape(ed.area || '')} — ${escape(ed.institution || '')}</span>`;
+      html += `<div class="grid-item">`;
+      html += `<div class="item-title">${escape(ed.institution || '')}${era ? ` <span class="item-date">(${era})</span>` : ''}</div>`;
+      html += `<div class="item-subtitle">${escape(ed.studyType || '')}, ${escape(ed.area || '')}</div>`;
       html += `</div>`;
     });
   }
 
   // Recommendations (first 3)
   if (references.length) {
-    html += `<h2 class="section-title">Recommendations</h2>`;
+    html += `<h2 class="section-title" style="break-before:page">Recommendations</h2>`;
     references.forEach(ref => {
       const dateStr = ref.date ? new Date(ref.date + '-01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : '';
-      const paragraphs = (ref.reference || '').split(/\n\n+/).map(p => `<p>${escape(p.trim())}</p>`).join('');
+      const paragraphs = (ref.reference || '').split('\n').filter(p => p.trim()).map(p => `<p>${escape(p.trim())}</p>`).join('');
       html += `<div class="rec-item">`;
       html += `<div class="rec-meta"><div class="rec-name">${escape(ref.name || '')}</div><div class="rec-title">${escape(ref.title || '')}</div><div class="rec-date">${escape(dateStr)}</div></div>`;
       html += `<div class="rec-text">${paragraphs}</div>`;
       html += `</div>`;
     });
   }
-
-  html += `<div class="cv-footer">Full recommendations available at <a href="https://www.linkedin.com/in/lazaryevyuriy/details/recommendations/">LinkedIn</a></div>`;
 
   html += `</body></html>`;
   return html;

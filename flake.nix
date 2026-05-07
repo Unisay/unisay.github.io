@@ -38,8 +38,8 @@
             if $overlay[0].basics.summary then .basics.summary = $overlay[0].basics.summary else . end
             | .work |= map(
                 . as $job
-                | ($overlay[0].work[] | select(.name == $job.name)) as $match
-                | if $match then .highlights = $match.highlights else . end
+                | [($overlay[0].work[] | select(.name == $job.name))] as $matches
+                | if ($matches | length) > 0 then .highlights = $matches[0].highlights else . end
               )
             | del(.interests)
           ' resume.json > resume-pdf.json
@@ -75,8 +75,8 @@
             if $overlay[0].basics.summary then .basics.summary = $overlay[0].basics.summary else . end
             | .work |= map(
                 . as $job
-                | ($overlay[0].work[] | select(.name == $job.name)) as $match
-                | if $match then .highlights = $match.highlights else . end
+                | [($overlay[0].work[] | select(.name == $job.name))] as $matches
+                | if ($matches | length) > 0 then .highlights = $matches[0].highlights else . end
               )
             | del(.interests)
           ' resume.json > resume-pdf.json
