@@ -32,6 +32,7 @@ function render(resume) {
   const projects = resume.projects || [];
   const education = resume.education || [];
   const interests = resume.interests || [];
+  const references = resume.references || [];
 
   let html = `<!DOCTYPE html>
 <html lang="en">
@@ -40,14 +41,14 @@ function render(resume) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${escape(basics.name || 'CV')}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
   background: #ffffff;
   color: #1a1a1a;
-  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 14px;
   line-height: 1.6;
 }
@@ -82,14 +83,20 @@ html, body {
 .cv-meta-row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 16px;
   margin-top: 16px;
 }
 .cv-contact {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
+}
+.cv-contact-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 6px 20px;
 }
 .cv-contact a {
   color: #1a1a1a;
@@ -116,6 +123,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: center;
   gap: 10px;
   flex-shrink: 0;
 }
@@ -157,7 +165,10 @@ html, body {
   font-size: 15px;
   line-height: 1.6;
   color: #2a2a2a;
-  margin: 0 0 32px 0;
+  margin: 0 0 12px 0;
+}
+.cv-summary:last-of-type {
+  margin-bottom: 24px;
 }
 
 /* ── Section headings ── */
@@ -455,20 +466,32 @@ section:first-of-type .section-title {
   html += `<div class="cv-meta-row">`;
 
   html += `<div class="cv-contact">`;
+  html += `<div class="cv-contact-links">`;
   if (basics.email) {
     html += `<a href="mailto:${escape(basics.email)}">${emailIcon}${escape(basics.email)}</a>`;
   }
   html += `<a href="https://cv.functional.work" target="_blank">${globeIcon}cv.functional.work</a>`;
   if (basics.profiles) {
     basics.profiles.forEach(p => {
-      const icon = p.network && p.network.toLowerCase() === 'github' ? githubIcon : linkedinIcon;
-      html += `<a href="${escape(p.url)}" target="_blank">${icon}${escape(p.url.replace(/^https?:\/\//, ''))}</a>`;
+      if (p.network && p.network.toLowerCase() === 'github') {
+        html += `<a href="${escape(p.url)}" target="_blank">${githubIcon}${escape(p.url.replace(/^https?:\/\//, ''))}</a>`;
+      }
+    });
+  }
+  html += `</div>`;
+  html += `<div class="cv-contact-links">`;
+  if (basics.profiles) {
+    basics.profiles.forEach(p => {
+      if (p.network && p.network.toLowerCase() !== 'github') {
+        html += `<a href="${escape(p.url)}" target="_blank">${linkedinIcon}${escape(p.url.replace(/^https?:\/\//, ''))}</a>`;
+      }
     });
   }
   if (basics.location) {
     const loc = [basics.location.city, basics.location.region].filter(Boolean).join(', ');
     html += `<span class="cv-location">${locationIcon}${escape(loc)} | Remote</span>`;
   }
+  html += `</div>`;
   html += `</div>`;
 
   html += `<div class="cv-right-meta">`;
@@ -582,17 +605,18 @@ section:first-of-type .section-title {
   }
 
   // Recommendations
-  html += `<section><h2 class="section-title">Recommendations</h2><div class="rec-grid">`;
-
-  html += `<div class="rec-item"><div class="rec-meta"><div class="rec-name">Christopher Coffey</div><div class="rec-title">CTO @ CollegeVine</div><div class="rec-date">June 2019</div></div><div class="rec-text"><p>When we extended our offer to Yuriy, he responded saying that CollegeVine's contract with Alan Turing was signed. While it turned out that this happened to be the name of the agency through which we were working, his sense of humor and zeal for writing quality software were apparent from day 1. Over the course of his time at CollegeVine Yuriy did very high-quality work. He made a major impact spinning up several new Haskell services from scratch, as well as several critical features in our UI. He was never afraid to venture into whichever part of the system we needed him in, and pretty much always left it better than he found it.</p><p>He's been writing software for a long time, and that experience is apparent in Yuriy's ability to introduce positive change to teams. He was never afraid to share opinions and suggestions for improvement, most of which were adopted by the team. One particularly impressive bit of work was a property-based integration testing framework built upon Selenium, which we used to immediately protect a critical workflow for the company.</p><p>If you're looking to start up a new engineering team or add a highly effective team member to an existing team, Yuriy is a great choice! I'd be thrilled to work with him again in the future.</p></div></div>`;
-
-  html += `<div class="rec-item"><div class="rec-meta"><div class="rec-name">Eric Torreborre</div><div class="rec-title">Senior Software Engineer (Rust, Haskell, Scala)</div><div class="rec-date">June 2019</div></div><div class="rec-text"><p>I worked with Yuriy at Zalando, in the Merchant Operations department. You cannot make a mistake by deciding to work with Yuriy because he is curious, dedicated and very thorough. I was also the witness of Yuriy's growing love for Functional Programming, using various languages, like Haskell, Purescript, Scala and he is now a very skilled person in that domain, capable of delivering reliable and maintainable systems. On the personal side, he is pleasant to work with, always constructive and a team player. In one icon 💯.</p></div></div>`;
-
-  html += `<div class="rec-item"><div class="rec-meta"><div class="rec-name">Patrice Moore</div><div class="rec-title">Full Stack Software Engineering Manager</div><div class="rec-date">February 2013</div></div><div class="rec-text"><p>Yuriy was amazing. I have hired numerous developers, both in person and through odesk. Yuriy was one of the best. He started working on adding significant features, took responsibility for crafting solutions to technical issues with only minimal direction.</p><p>Yuriy reachitected portions of FarReaches wordpress plugin to remove significant technical debt, created and improved significant parts of our automated testing framework, and created an eventbus that allows the browser javascript UI and the PHP wordpress plugin to communicate in an elegant, extensible manner.</p></div></div>`;
-
-  html += `<div class="rec-item"><div class="rec-meta"><div class="rec-name">Bartlomiej Nagorski</div><div class="rec-title">Delivery Manager & Job Family Lead at GFT</div><div class="rec-date">December 2012</div></div><div class="rec-text"><p>Yuriy is highly proficient developer with extensive programming knowledge that covers development, testing and a huge number of frameworks and libraries. He is also familiar with different software development methodologies, which has proved to be very useful in his team lead role. Yuriy has been able to propose a number of technical solutions and process improvements to our clients, as well as organise work for the team and mentor his less experienced colleagues.</p><p>I am recommending Yuriy, because he is a team player, a good colleague and an expert in software development.</p></div></div>`;
-
-  html += `</div></section>`;
+  if (references.length) {
+    html += `<section><h2 class="section-title">Recommendations</h2><div class="rec-grid">`;
+    references.forEach(ref => {
+      const dateStr = ref.date ? new Date(ref.date + '-01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : '';
+      const paragraphs = (ref.reference || '').split(/\n\n+/).map(p => `<p>${escape(p.trim())}</p>`).join('');
+      html += `<div class="rec-item">`;
+      html += `<div class="rec-meta"><div class="rec-name">${escape(ref.name || '')}</div><div class="rec-title">${escape(ref.title || '')}</div><div class="rec-date">${escape(dateStr)}</div></div>`;
+      html += `<div class="rec-text">${paragraphs}</div>`;
+      html += `</div>`;
+    });
+    html += `</div></section>`;
+  }
 
   // Interests
   if (interests.length) {

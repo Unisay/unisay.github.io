@@ -1,7 +1,7 @@
 basics:
   name: Lazaryev Yuriy
   label: Senior Software Engineer
-  email: unisay@gmail.com
+  email: my@functional.work
   location:
     city: Berlin
     countryCode: DE
@@ -19,6 +19,12 @@ basics:
     to compilers — I tried writing my own backend for a PureScript-to-Lua
     compiler, enjoyed it, and decided to do it full-time. That is how I ended up
     working on the smart-contract language compiler for Cardano.
+
+
+    I look for teams with a well-understood mission where I can make meaningful
+    contributions — bringing functional programming strengths, first-principles
+    thinking, and a design-before-build discipline that tends to produce software
+    that is correct and secure before it is fast.
 
 work:
   - name: Intersect MBO
@@ -455,26 +461,6 @@ projects:
       - Stellar
       - Blockchain
 
-interests:
-  - name: Pure FP as production paradigm
-    keywords:
-      - Pure functional programming is not a research curiosity — it is a
-        production discipline. Haskell and PureScript are my primary tools
-        precisely because they make a class of bugs impossible by construction,
-        not because they are fashionable.
-
-  - name: Bridging research and engineering
-    keywords:
-      - I author CIPs, build benchmarking frameworks, write simulations, and
-        wire LLMs into static analysis pipelines. The distance between "how
-        does this work" and "this is in production" should be as short as
-        possible.
-
-  - name: Teaching and durable infrastructure
-    keywords:
-      - Three colleagues learned Haskell in production teams because I taught
-        them. The serverless services I built in 2019 are still running without
-        incidents. I measure success by what survives, not what ships.
 
 education:
   - institution: University "Ukraine"
@@ -497,3 +483,69 @@ certificates:
   - name: Oracle Certified Professional, Java SE
     date: "2008"
     issuer: Oracle (formerly Sun Microsystems)
+
+references:
+  - name: Christopher Coffey
+    title: CTO @ CollegeVine
+    date: "2019-06"
+    reference: >
+      When we extended our offer to Yuriy, he responded saying that CollegeVine's
+      contract with Alan Turing was signed. While it turned out that this happened
+      to be the name of the agency through which we were working, his sense of humor
+      and zeal for writing quality software were apparent from day 1. Over the course
+      of his time at CollegeVine Yuriy did very high-quality work. He made a major
+      impact spinning up several new Haskell services from scratch, as well as several
+      critical features in our UI. He was never afraid to venture into whichever part
+      of the system we needed him in, and pretty much always left it better than he
+      found it.
+
+      He's been writing software for a long time, and that experience is apparent in
+      Yuriy's ability to introduce positive change to teams. He was never afraid to
+      share opinions and suggestions for improvement, most of which were adopted by
+      the team. One particularly impressive bit of work was a property-based integration
+      testing framework built upon Selenium, which we used to immediately protect a
+      critical workflow for the company.
+
+      If you're looking to start up a new engineering team or add a highly effective
+      team member to an existing team, Yuriy is a great choice! I'd be thrilled to
+      work with him again in the future.
+
+  - name: Eric Torreborre
+    title: "Senior Software Engineer (Rust, Haskell, Scala)"
+    date: "2019-06"
+    reference: >
+      I worked with Yuriy at Zalando, in the Merchant Operations department. You
+      cannot make a mistake by deciding to work with Yuriy because he is curious,
+      dedicated and very thorough. I was also the witness of Yuriy's growing love
+      for Functional Programming, using various languages, like Haskell, Purescript,
+      Scala and he is now a very skilled person in that domain, capable of delivering
+      reliable and maintainable systems. On the personal side, he is pleasant to
+      work with, always constructive and a team player. In one icon: highly recommended.
+
+  - name: Patrice Moore
+    title: Full Stack Software Engineering Manager
+    date: "2013-02"
+    reference: >
+      Yuriy was amazing. I have hired numerous developers, both in person and through
+      odesk. Yuriy was one of the best. He started working on adding significant
+      features, took responsibility for crafting solutions to technical issues with
+      only minimal direction.
+
+      Yuriy reachitected portions of FarReaches wordpress plugin to remove significant
+      technical debt, created and improved significant parts of our automated testing
+      framework, and created an eventbus that allows the browser javascript UI and
+      the PHP wordpress plugin to communicate in an elegant, extensible manner.
+
+  - name: Bartlomiej Nagorski
+    title: Delivery Manager & Job Family Lead at GFT
+    date: "2012-12"
+    reference: >
+      Yuriy is highly proficient developer with extensive programming knowledge that
+      covers development, testing and a huge number of frameworks and libraries. He
+      is also familiar with different software development methodologies, which has
+      proved to be very useful in his team lead role. Yuriy has been able to propose
+      a number of technical solutions and process improvements to our clients, as
+      well as organise work for the team and mentor his less experienced colleagues.
+
+      I am recommending Yuriy, because he is a team player, a good colleague and an
+      expert in software development.

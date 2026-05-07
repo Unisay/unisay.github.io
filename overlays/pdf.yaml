@@ -1,33 +1,47 @@
-basics:
-  summary: >
-    Compiler engineer with 25+ years across e-commerce, fintech, and blockchain.
-    Specialized in Haskell, functional programming, and smart-contract compiler
-    engineering for Cardano. Leading benchmarking, security, and CIP-standard
-    work on the Plutus Core team.
-
 work:
   - name: Intersect MBO
     highlights:
       - >
-        Authored and implemented CIP-0156 (multiIndexArray builtin): took the proposal
-        from initial draft through community ratification to full compiler implementation.
+        Authored and implemented CIP-0156 (multiIndexArray builtin): from initial
+        draft through community ratification to full compiler implementation.
       - >
-        Designed and built the UPLC-CAPE benchmarking framework for measuring UPLC
-        program performance across compiler versions. Presented at UPLC 2025 workshop.
-        Security review work on high-stakes blockchain compiler output.
+        Designed and built the UPLC-CAPE benchmarking framework for measuring
+        UPLC program performance across compiler versions. Presented at the UPLC
+        2025 workshop. Security review work on high-stakes blockchain compiler output.
       - >
-        Cardano Node release manager (https://github.com/IntersectMBO/cardano-node/issues/5868).
-        Implemented CIP-57 (machine-readable Plutus contract blueprints) and a blockchain
-        indexer feeding a Grafana dashboard for compiler optimization decisions.
+        Cardano Node release manager. Implemented CIP-57 (machine-readable Plutus
+        contract blueprints) and a blockchain indexer feeding a Grafana dashboard
+        for compiler optimization decisions.
+
+  - name: Cardano Foundation
+    highlights:
+      - >
+        Continued open-source contributions to cardano-wallet and the broader
+        Cardano ecosystem in Haskell and Nix.
+
+  - name: Input-Output Global
+    highlights:
+      - >
+        Full-time contributor to cardano-wallet: a production Haskell service
+        handling wallet state, UTxO tracking, and transaction construction
+        for the entire Cardano network.
 
   - name: Bellroy
     highlights:
       - >
-        Designed and built a Haskell customer-behaviour simulation modelling Bellroy's
-        full purchase funnel. Handed to the data science team after one month.
+        Founded the Haskell engineering practice: established stack, tooling,
+        and patterns. Grew serverless estate from 0 to 6 AWS Lambda + DynamoDB
+        services — all still running in production without incidents.
       - >
-        Bet early on serverless: the first AWS Lambda + DynamoDB service I shipped is
-        still running in production with no major incidents, making serverless the default
-        deployment pattern (grew from 0 to 6 services).
+        Built a DSL compiler framework yielding 4 production compilers (shipping
+        logistics, promotion rules). Led a 5-day FP training; 3 colleagues
+        transitioned to full-time Haskell development.
+
+  - name: CollegeVine
+    highlights:
+      - >
+        Built backend and frontend features (Haskell, PureScript, React).
+        Designed a UI test automation framework that significantly reduced
+        manual QA time.
 
 interests: []
