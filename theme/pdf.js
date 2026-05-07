@@ -368,7 +368,7 @@ html, body {
 
   // Skills
   if (skills.length) {
-    html += `<h2 class="section-title">Skills</h2>`;
+    html += `<h2 class="section-title" style="break-before:page">Skills</h2>`;
     html += `<div class="skills-list">`;
     skills.forEach(s => {
       html += `<div class="skill-row">`;
