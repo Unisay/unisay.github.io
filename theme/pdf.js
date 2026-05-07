@@ -1,16 +1,16 @@
 const escape = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-function formatDateRange(startDate, endDate) {
+function formatDateFlat(startDate, endDate) {
   if (!startDate) return '';
   const start = new Date(startDate + '-01');
-  const end = endDate ? new Date(endDate + '-01') : null;
   const startStr = start.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
   if (!endDate) return `${startStr} – Present`;
+  const end = new Date(endDate + '-01');
   const endStr = end.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
   if (start.getFullYear() === end.getFullYear()) {
     return `${start.toLocaleDateString('en-US', { month: 'short' })} – ${endStr}`;
   }
-  return `<span style="white-space:nowrap">${startStr} –</span><br><span style="white-space:nowrap">${endStr}</span>`;
+  return `${startStr} – ${endStr}`;
 }
 
 function yearOf(dateStr) {
@@ -119,10 +119,8 @@ html, body {
   break-after: avoid;
 }
 
-/* ── Experience grid ── */
+/* ── Experience ── */
 .grid-item {
-  display: flex;
-  gap: 10pt;
   margin-bottom: 8pt;
   padding-bottom: 8pt;
   border-bottom: 0.5pt solid #e5e5e5;
@@ -133,32 +131,18 @@ html, body {
   margin-bottom: 0;
   padding-bottom: 0;
 }
-.meta-column {
-  width: 88pt;
-  flex-shrink: 0;
-  padding-right: 8pt;
-  border-right: 1.5pt solid #e5e5e5;
-  display: flex;
-  flex-direction: column;
-  gap: 2pt;
-}
-.meta-date {
-  font-size: 8pt;
-  font-weight: 600;
-  color: #4a4a4a;
-}
-.content-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 3pt;
-}
 .item-title {
   font-size: 10pt;
   font-weight: 700;
   color: #1a1a1a;
+  margin-bottom: 2pt;
 }
 .item-title a { color: inherit; text-decoration: none; }
+.item-date {
+  font-size: 8.5pt;
+  font-weight: 400;
+  color: #6a6a6a;
+}
 .item-subtitle {
   font-size: 8.5pt;
   font-weight: 500;
@@ -344,10 +328,10 @@ html, body {
   if (recentWork.length) {
     html += `<h2 class="section-title">Experience</h2>`;
     recentWork.forEach(job => {
+      const dateStr = formatDateFlat(job.startDate, job.endDate);
+      const nameHtml = job.url ? `<a href="${escape(job.url)}">${escape(job.name)}</a>` : escape(job.name);
       html += `<div class="grid-item">`;
-      html += `<div class="meta-column"><span class="meta-date">${formatDateRange(job.startDate, job.endDate)}</span></div>`;
-      html += `<div class="content-column">`;
-      html += `<div class="item-title">${job.url ? `<a href="${escape(job.url)}">${escape(job.name)}</a>` : escape(job.name)}</div>`;
+      html += `<div class="item-title">${nameHtml}${dateStr ? ` <span class="item-date">(${dateStr})</span>` : ''}</div>`;
       html += `<div class="item-subtitle">${escape(job.position || '')}</div>`;
       if (job.highlights && job.highlights.length) {
         if (job.highlights.length === 1) {
@@ -362,7 +346,7 @@ html, body {
       } else if (job.summary) {
         html += `<p class="item-description">${escape(job.summary.replace(/\n/g, ' '))}</p>`;
       }
-      html += `</div></div>`;
+      html += `</div>`;
     });
   }
 
