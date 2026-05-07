@@ -14,16 +14,11 @@ basics:
       username: lazaryevyuriy
       url: https://www.linkedin.com/in/lazaryevyuriy
   summary: >
-    Software engineer with 25+ years of experience across e-commerce, fintech,
-    blockchain, and programming language tooling. I spend most of my time now
-    in compiler engineering — specifically the Plutus Core / Plinth compilers
-    that power smart contracts on the Cardano blockchain. I wrote my first line
-    of production code in 1999 and have been in strongly-typed functional
-    programming (Haskell, PureScript, Scala) since 2015. The common thread
-    across everything: high-stakes systems where correctness is non-negotiable,
-    a preference for building tools that outlast the project that prompted them,
-    and a genuine interest in bringing people into the FP world rather than just
-    using it myself.
+    Software engineer with 25+ years of experience. Started in web development,
+    went deep into backend and distributed systems. My interest in DSLs led me
+    to compilers — I tried writing my own backend for a PureScript-to-Lua
+    compiler, enjoyed it, and decided to do it full-time. That is how I ended up
+    working on the smart-contract language compiler for Cardano.
 
 work:
   - name: Intersect MBO
@@ -41,16 +36,12 @@ work:
         performance across compiler versions. Presented at the UPLC 2025 workshop
         (https://plutus.cardano.intersectmbo.org/uplc2025/talks/cape-workshop/).
       - >
-        Authored and implemented CIP-0156 (multiIndexArray builtin): took the proposal
-        from initial draft through community ratification to full compiler implementation.
-        This is the standard path for extending the Cardano scripting language.
-      - >
         Security review work on high-stakes blockchain code: auditing and hardening
         smart contract compiler output where on-chain bugs have real financial consequences.
       - >
         Authored the concept and co-built an AI-assisted bug-discovery pipeline: I led a
-        team of AI specialists, contributed a custom pipeline component (), and
-        integrated the result into the compiler's existing tooling.
+        team of AI specialists, contributed a custom pipeline component (evaluation engine), 
+        and integrated the result into the compiler's existing tooling.
       - >
         Cardano Node release manager: coordinated multi-team release process for
         cardano-node, including integration testing, changelog curation, and stakeholder
@@ -58,6 +49,10 @@ work:
       - >
         Implemented CIP-57: a machine-readable format for documenting Plutus smart
         contract blueprints, enabling tooling to generate type-safe client code.
+      - >
+        Authored and implemented CIP-0156 (multiIndexArray builtin): took the proposal
+        from initial draft through community ratification to full compiler implementation.
+        This is the standard path for extending the Cardano scripting language.
       - >
         Implemented a Cardano blockchain indexer that continuously collects execution
         statistics on all Plutus scripts running on mainnet, feeding a Grafana dashboard
@@ -69,6 +64,8 @@ work:
       - Plinth
       - Cardano Blockchain
       - Compiler Engineering
+      - Security
+      - Benchmarking
 
   - name: Cardano Foundation
     position: Senior Software Engineer
@@ -185,7 +182,7 @@ work:
         property-based tests (QuickCheck, Hedgehog).
       - >
         Wrote and open-sourced the Haskell Stellar SDK
-        (https://github.com/Unisay/stellar-sdk) — the first community SDK for
+        (https://github.com/Unisay/stellar-haskell-sdk) — the first community SDK for
         Stellar in Haskell, enabling integration with the XLM payment network.
       - Conducted technical interviews and coordinated external contractors.
     keywords:
@@ -356,104 +353,107 @@ work:
       - Shell Scripting
 
 skills:
-  - name: Functional Programming
+  - name: Functional Programming & Formal Methods
     level: Expert
     keywords:
       - Haskell
       - PureScript
-      - Scala
       - Elm
-      - QuickCheck
-      - Hedgehog
+      - Model Checking (Quint, TLA+, Agda)
 
   - name: Compiler & PL Engineering
     level: Expert
     keywords:
       - Plutus Core
       - Plinth
-      - UPLC
+      - Untyped Plutus Core (UPLC)
       - DSL design
       - Benchmarking
+      - GHC Core
+      - GHC Plugins
 
   - name: Blockchain & Smart Contracts
     level: Expert
     keywords:
       - Cardano
       - Plutus
+      - Plinth
       - Stellar
       - CIP authorship
+      - Security
 
   - name: Cloud & Infrastructure
     level: Proficient
     keywords:
       - AWS Lambda
+      - EC2 / S3 / RDS
       - DynamoDB
-      - Kubernetes
       - EKS
       - Serverless
+      - Docker
       - Nix
       - NixOS
       - Terraform
+      - CI/CD (GitHub Actions)
 
   - name: Data & Search
     level: Proficient
     keywords:
       - PostgreSQL
       - Elasticsearch
+      - Kafka
+      - Redis
+      - RabbitMQ
       - Hadoop
-      - Grafana
+      - GraphQL
 
-  - name: JVM / Legacy
+  - name: JVM Ecosystem
     level: Proficient
     keywords:
-      - Java
+      - J2EE
       - Spring
+      - Dropwizard
       - Akka
-      - Scala.js
-      - Cats
+      - Scala
+      - Clojure
+      - Groovy
+      - Scalaz
+      - Typelevel Cats
 
 projects:
-  - name: Haskell Stellar SDK
+  - name: "PureScript to Lua: compiler backend"
     description: >
-      Open-source Haskell client library for the Stellar blockchain network.
-      First community SDK for Stellar in Haskell; used by DSTOQ in production.
-    url: https://github.com/Unisay/stellar-sdk
+      A custom backend for the PureScript compiler targeting Lua. Written as a
+      hobby project to explore DSL design and compiler construction; this
+      experience led directly to my move into professional compiler engineering.
+    url: https://github.com/Unisay/purescript-lua
     keywords:
-      - Haskell
-      - Stellar
-      - Blockchain
+      - PureScript
+      - Lua
+      - Compiler Backend
+      - DSL
 
   - name: UPLC-CAPE Benchmarking Framework
     description: >
       A structured benchmarking harness for Untyped Plutus Language Core (UPLC)
       programs. Measures performance characteristics across compiler versions,
       enabling data-driven compiler optimization decisions.
-    url: https://plutus.cardano.intersectmbo.org/uplc2025/talks/cape-workshop/
+    url: https://github.com/IntersectMBO/uplc-cape
     keywords:
       - Haskell
       - Plutus
       - Benchmarking
       - Compiler Engineering
 
-  - name: cardano-wallet contributions
+  - name: Haskell Stellar SDK
     description: >
-      Ongoing contributions to the primary full-node wallet of the Cardano
-      network. Covers UTxO management, transaction construction, and wallet
-      state tracking.
-    url: https://github.com/cardano-foundation/cardano-wallet
+      Open-source Haskell client library for the Stellar blockchain network.
+      First community SDK for Stellar in Haskell; used by DSTOQ in production.
+    url: https://github.com/Unisay/stellar-haskell-sdk
     keywords:
       - Haskell
-      - Cardano
-
-  - name: CIP-0156 (multiIndexArray)
-    description: >
-      Cardano Improvement Proposal for a new UPLC builtin. Authored, drove
-      community ratification, and implemented in the Plutus compiler.
-    url: https://github.com/cardano-foundation/CIPs/tree/master/CIP-0156
-    keywords:
-      - Cardano
-      - Compiler Engineering
-      - Standards
+      - Stellar
+      - Blockchain
 
 interests:
   - name: Pure FP as production paradigm
@@ -497,4 +497,3 @@ certificates:
   - name: Oracle Certified Professional, Java SE
     date: "2008"
     issuer: Oracle (formerly Sun Microsystems)
-    url: ""

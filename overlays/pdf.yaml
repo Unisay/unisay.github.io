@@ -1,0 +1,33 @@
+basics:
+  summary: >
+    Compiler engineer with 25+ years across e-commerce, fintech, and blockchain.
+    Specialized in Haskell, functional programming, and smart-contract compiler
+    engineering for Cardano. Leading benchmarking, security, and CIP-standard
+    work on the Plutus Core team.
+
+work:
+  - name: Intersect MBO
+    highlights:
+      - >
+        Authored and implemented CIP-0156 (multiIndexArray builtin): took the proposal
+        from initial draft through community ratification to full compiler implementation.
+      - >
+        Designed and built the UPLC-CAPE benchmarking framework for measuring UPLC
+        program performance across compiler versions. Presented at UPLC 2025 workshop.
+        Security review work on high-stakes blockchain compiler output.
+      - >
+        Cardano Node release manager (https://github.com/IntersectMBO/cardano-node/issues/5868).
+        Implemented CIP-57 (machine-readable Plutus contract blueprints) and a blockchain
+        indexer feeding a Grafana dashboard for compiler optimization decisions.
+
+  - name: Bellroy
+    highlights:
+      - >
+        Designed and built a Haskell customer-behaviour simulation modelling Bellroy's
+        full purchase funnel. Handed to the data science team after one month.
+      - >
+        Bet early on serverless: the first AWS Lambda + DynamoDB service I shipped is
+        still running in production with no major incidents, making serverless the default
+        deployment pattern (grew from 0 to 6 services).
+
+interests: []
