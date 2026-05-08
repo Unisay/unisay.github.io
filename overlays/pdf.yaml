@@ -13,18 +13,21 @@ work:
         contract blueprints) and a blockchain indexer feeding a Grafana dashboard
         for compiler optimization decisions.
 
-  - name: Cardano Foundation
+  - name: Input-Output Global → Cardano Foundation
     highlights:
       - >
-        Continued open-source contributions to cardano-wallet and the broader
-        Cardano ecosystem in Haskell and Nix.
-
-  - name: Input-Output Global
-    highlights:
+        Designed and shipped Light Backend Mode for the full-node wallet —
+        letting users transact without a full chain sync by routing chain
+        queries through an external indexing API. Owned end-to-end; later
+        retired when the team dropped the external-API dependency.
       - >
-        Full-time contributor to cardano-wallet: a production Haskell service
-        handling wallet state, UTxO tracking, and transaction construction
-        for the entire Cardano network.
+        Rewrote the wallet's transaction-construction pipeline around a unified
+        balancing primitive, replacing a legacy path that had diverged across
+        endpoints — core logic exercised by every transaction the wallet emits.
+      - >
+        Remastered the end-to-end test infrastructure: turned a flaky shared
+        suite into a reliable per-PR check, with the suite owning its own
+        preprod node/wallet lifecycle.
 
   - name: Bellroy
     highlights:

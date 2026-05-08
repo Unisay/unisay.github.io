@@ -38,8 +38,8 @@ work:
       - >
         Designed and built the UPLC-CAPE benchmarking framework: a structured
         harness for measuring Untyped Plutus Language Core (UPLC) program
-        performance across compiler versions. Presented at the UPLC 2025 workshop
-        (https://plutus.cardano.intersectmbo.org/uplc2025/talks/cape-workshop/).
+        performance across compiler versions. Presented at the
+        [UPLC 2025 workshop](https://plutus.cardano.intersectmbo.org/uplc2025/talks/cape-workshop/).
       - >
         Security review work on high-stakes blockchain code: auditing and hardening
         smart contract compiler output where on-chain bugs have real financial consequences.
@@ -50,7 +50,7 @@ work:
       - >
         Cardano Node release manager: coordinated multi-team release process for
         cardano-node, including integration testing, changelog curation, and stakeholder
-        sign-off (https://github.com/IntersectMBO/cardano-node/issues/5868).
+        sign-off.
       - >
         Implemented CIP-57: a machine-readable format for documenting Plutus smart
         contract blueprints, enabling tooling to generate type-safe client code.
@@ -72,39 +72,41 @@ work:
       - Security
       - Benchmarking
 
-  - name: Cardano Foundation
-    position: Senior Software Engineer
-    url: https://cardano-foundation.org/
-    startDate: "2023-06"
+  - name: Input-Output Global → Cardano Foundation
+    position: Senior Software Engineer — Cardano Wallet team
+    url: https://github.com/cardano-foundation/cardano-wallet
+    startDate: "2022-02"
     endDate: "2023-12"
     summary: >
-      The Cardano Foundation is an independent, Swiss-based not-for-profit
-      tasked with advancing Cardano's public digital infrastructure. Continued
-      contributing to cardano-wallet and other open-source ecosystem projects.
-    keywords:
-      - Haskell
-      - Nix
-      - Cardano Blockchain
-
-  - name: Input-Output Global
-    position: Senior Software Engineer
-    url: https://iog.io/
-    startDate: "2022-02"
-    endDate: "2023-06"
-    summary: >
-      IOG is the research and engineering company behind the Cardano blockchain.
-      Full-time contributor to the open-source cardano-wallet project — the
-      primary full-node wallet of the Cardano network.
+      Full-time contributor to cardano-wallet, the production Haskell full-node
+      wallet used by most exchanges integrating with Cardano. The team
+      transitioned from IOG to the Cardano Foundation mid-2023 as part of a
+      stewardship handover; codebase, team, and scope of work stayed the same —
+      only the contracting entity changed.
     highlights:
       - >
-        Maintained and extended cardano-wallet
-        (https://github.com/cardano-foundation/cardano-wallet): a production
-        Haskell service handling wallet state, UTxO tracking, and transaction
-        construction for the entire Cardano ecosystem.
+        Designed and shipped Light Backend Mode for the full-node wallet,
+        letting users transact without waiting for a full chain sync by routing
+        chain queries through an external indexing API. Owned the feature
+        end-to-end — architecture, network layer, sync semantics, error
+        handling, rate limiting — from initial design to production. Later
+        retired when the team decided to drop the external-API dependency.
+      - >
+        Rewrote the wallet's transaction-construction pipeline around a unified
+        balancing primitive, replacing a legacy build-and-sign path that had
+        diverged across endpoints. Migrated every transaction-producing API
+        onto the new pipeline — core logic exercised by every transaction the
+        wallet emits.
+      - >
+        Remastered the end-to-end test infrastructure: turned a flaky shared
+        suite into a reliable per-PR check, with the suite owning its own
+        preprod node and wallet lifecycle and the local test cluster decoupled
+        from the wallet codebase.
     keywords:
       - Haskell
       - Nix
       - Cardano Blockchain
+      - Blockfrost
 
   - name: Bellroy
     position: Lead Software Engineer
