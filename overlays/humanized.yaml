@@ -1,4 +1,0 @@
-# Humanizer overlay — merge via:
-# yq eval-all 'select(fileIndex==0) * select(fileIndex==1)' resume.yaml overlays/humanized.yaml
-basics:
-  summary: ""  # to be filled by humanizer

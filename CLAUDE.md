@@ -8,10 +8,10 @@ Personal brand / CV website for Yuriy Lazaryev, a senior software engineer speci
 
 ## Hosting & Deployment
 
-- Hosted on **GitHub Pages** from the `main` branch of `unisay.github.io`
-- Custom domain: **cv.functional.work** (configured via `CNAME` file in `docs/`)
-- GitHub Pages source: `main` branch, `/docs` folder
-- Deployment is automatic: push to `main` and GitHub Pages serves the updated site
+- Hosted on **GitHub Pages** at **cv.functional.work** (CNAME emitted into `result/` by the `site` derivation)
+- Built and deployed via GitHub Actions: `.github/workflows/deploy.yml` runs `nix build .#site` on every push to `main` and uploads `result/` through `actions/deploy-pages`
+- GitHub Pages source: **GitHub Actions** (not a branch/folder)
+- The local `docs/` directory is gitignored — it's a convenience for previewing builds, not the deploy source
 
 ## Architecture
 
@@ -23,9 +23,8 @@ The site is built from a **Nix flake pipeline** with `resume.yaml` as the single
 | `flake.nix` | Nix build pipeline (HTML, PDF, site derivations) |
 | `scripts/render-html.sh` | `yq | resumed export` wrapper (dev use) |
 | `scripts/render-pdf.sh` | `chromium --headless` PDF wrapper (dev use) |
-| `overlays/humanized.yaml` | Humanizer overlay (merge over resume.yaml) |
-| `docs/` | Build output served by GitHub Pages |
-| `docs/CNAME` | Custom domain config |
+| `.github/workflows/deploy.yml` | CI build + Pages deploy |
+| `docs/` | Local-only preview output (gitignored) |
 
 ## Build Commands
 
@@ -33,13 +32,11 @@ The site is built from a **Nix flake pipeline** with `resume.yaml` as the single
 # Enter dev shell (provides yq, resumed, chromium, nodejs)
 nix develop
 
-# Build full site to result/
+# Build full site to result/ (HTML + PDF + CNAME)
 nix build .#site
 
-# Populate docs/ for deploy
-cp result/index.html docs/
-cp result/resume.pdf docs/
-# CNAME already in docs/
+# Optional: refresh local preview in docs/ (not deployed — Actions builds from source)
+command cp -f result/index.html result/resume.pdf docs/
 
 # Manual render (inside nix develop)
 ./scripts/render-html.sh resume.yaml docs/index.html
@@ -49,12 +46,6 @@ cp result/resume.pdf docs/
 
 Edit `resume.yaml` — it follows the [JSON Resume schema](https://jsonresume.org/schema/).
 
-To apply humanizer overlay:
-```bash
-yq eval-all 'select(fileIndex==0) * select(fileIndex==1)' resume.yaml overlays/humanized.yaml > /tmp/merged.yaml
-./scripts/render-html.sh /tmp/merged.yaml docs/index.html
-```
-
 ## GitHub Pages Configuration
 
-In repo Settings → Pages: source must be set to **`main` branch / `/docs` folder**.
+In repo Settings → Pages: source must be set to **GitHub Actions**. The `deploy.yml` workflow handles upload via `actions/upload-pages-artifact` + `actions/deploy-pages`.
