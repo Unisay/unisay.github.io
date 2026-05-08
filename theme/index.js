@@ -1,5 +1,20 @@
 const escape = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
+// Wrap URLs in <a> tags. Run AFTER escape() — input is already HTML-safe.
+// Two forms supported:
+//   1. Markdown anchors:  [label](https://example.com)  →  <a href="...">label</a>
+//   2. Bare URLs:         https://example.com           →  <a href="...">https://example.com</a>
+// Markdown form is processed first so URLs inside it aren't wrapped twice.
+// Trailing sentence punctuation is stripped from bare URLs.
+const linkify = (s) => String(s)
+  .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, (_, label, url) =>
+    `<a href="${url}" target="_blank" rel="noopener">${label}</a>`)
+  .replace(/(?<!["'>])https?:\/\/[^\s<>"'()\[\]]+/g, (m) => {
+    const stripped = m.replace(/[.,;:!?]+$/, '');
+    const tail = m.slice(stripped.length);
+    return `<a href="${stripped}" target="_blank" rel="noopener">${stripped}</a>${tail}`;
+  });
+
 function formatDateRange(startDate, endDate) {
   if (!startDate) return '';
   const start = new Date(startDate + '-01');
@@ -461,7 +476,7 @@ section:first-of-type .section-title {
   html += `<h1 class="cv-name">${escape(basics.name || '')}</h1>`;
   html += `<div class="cv-tagline">${escape(basics.label || '')}</div>`;
   if (basics.summary) {
-    html += `<p class="cv-summary">${escape(basics.summary).replace(/\n\n/g, '</p><p class="cv-summary">').replace(/\n/g, ' ')}</p>`;
+    html += `<p class="cv-summary">${linkify(escape(basics.summary).replace(/\n\n/g, '</p><p class="cv-summary">').replace(/\n/g, ' '))}</p>`;
   }
   html += `<div class="cv-meta-row">`;
 
@@ -519,12 +534,12 @@ section:first-of-type .section-title {
       html += `<h3 class="item-title">${job.url ? `<a href="${escape(job.url)}" target="_blank">${escape(job.name)}</a>` : escape(job.name)}</h3>`;
       html += `<div class="item-subtitle">${escape(job.position || '')}</div>`;
       if (job.summary) {
-        html += `<p class="item-description">${escape(job.summary).replace(/\n\n/g, ' ').replace(/\n/g, ' ')}</p>`;
+        html += `<p class="item-description">${linkify(escape(job.summary).replace(/\n\n/g, ' ').replace(/\n/g, ' '))}</p>`;
       }
       if (job.highlights && job.highlights.length) {
         html += `<ul class="highlights-list">`;
         job.highlights.forEach(h => {
-          html += `<li>${escape(h).replace(/\n\n/g, '</li><li>').replace(/\n/g, ' ')}</li>`;
+          html += `<li>${linkify(escape(h).replace(/\n\n/g, '</li><li>').replace(/\n/g, ' '))}</li>`;
         });
         html += `</ul>`;
       }
@@ -569,12 +584,12 @@ section:first-of-type .section-title {
       html += `<div class="content-column">`;
       html += `<h3 class="item-title">${project.url ? `<a href="${escape(project.url)}" target="_blank">${escape(project.name)}</a>` : escape(project.name)}</h3>`;
       if (project.description) {
-        html += `<p class="item-description">${escape(project.description).replace(/\n\n/g, ' ').replace(/\n/g, ' ')}</p>`;
+        html += `<p class="item-description">${linkify(escape(project.description).replace(/\n\n/g, ' ').replace(/\n/g, ' '))}</p>`;
       }
       if (project.highlights && project.highlights.length) {
         html += `<ul class="highlights-list">`;
         project.highlights.forEach(h => {
-          html += `<li>${escape(h).replace(/\n\n/g, '</li><li>').replace(/\n/g, ' ')}</li>`;
+          html += `<li>${linkify(escape(h).replace(/\n\n/g, '</li><li>').replace(/\n/g, ' '))}</li>`;
         });
         html += `</ul>`;
       }
@@ -609,7 +624,7 @@ section:first-of-type .section-title {
     html += `<section><h2 class="section-title">Recommendations</h2><div class="rec-grid">`;
     references.forEach(ref => {
       const dateStr = ref.date ? new Date(ref.date + '-01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : '';
-      const paragraphs = (ref.reference || '').split(/\n\n+/).map(p => `<p>${escape(p.trim())}</p>`).join('');
+      const paragraphs = (ref.reference || '').split(/\n\n+/).map(p => `<p>${linkify(escape(p.trim()))}</p>`).join('');
       html += `<div class="rec-item">`;
       html += `<div class="rec-meta"><div class="rec-name">${escape(ref.name || '')}</div><div class="rec-title">${escape(ref.title || '')}</div><div class="rec-date">${escape(dateStr)}</div></div>`;
       html += `<div class="rec-text">${paragraphs}</div>`;
