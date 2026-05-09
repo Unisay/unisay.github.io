@@ -4,3 +4,5 @@ result-*
 node_modules
 build/
 docs/
+docs/resume.yaml
+docs/resume.json
